@@ -1,0 +1,7 @@
+{% extends "blogapp/base.html" %}
+
+{% block tit %}About{% endblock  %}
+{% block content %}
+    {{request.role}}
+    <h1>{{request.user|capfirst}}</h1>
+{% endblock content %}

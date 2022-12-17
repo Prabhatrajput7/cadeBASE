@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SIEGE</h1>
+    obj {{obj}} <br>
+    value {{value}} <br>
+    l {{l}} <br>
+    {% for v in  value%}
+        {{v.op}} <br>
+    {% endfor %}
+    <br>
+    lst {{lst}} <br>
+    tuple {{tuple}} <br>
+
+    {% for o in  fobj%}
+    <a href=" {% url 'siegeid' o.id%} "> {{o}}</a>
+    {% endfor %}
+
+    <a href=" {% url 'logout' %} ">logout</a>
+</body>
+</html>

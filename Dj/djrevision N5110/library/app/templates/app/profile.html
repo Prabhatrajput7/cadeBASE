@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block bod %}
+      
+<h1>Welcome to your profile</h1>
+<h2>Here are your books checked out:</h2>
+
+{% for book in bookinstance_list  %}
+    <p>{{book}}</p>
+
+    {% empty %}
+    <p>Nothing here</p>
+
+{% endfor %}
+{% endblock  %}

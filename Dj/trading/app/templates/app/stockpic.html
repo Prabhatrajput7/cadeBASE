@@ -1,0 +1,58 @@
+{% extends 'app/basic.html' %}
+{% load static %}
+{% block title %}
+StockPicker
+{% endblock %}
+{% block css %}
+<style>
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Live Stock Tracker</h1>
+    <p>Select your favourite stocks.</p>
+    <form action="/stocktracker">
+        <label for="stockpicker">Select Stocks:</label>
+        <select class="form-select form-select-lg mb-3" multiple aria-label="multiple select example"
+            name="stockpicker">
+            {% for i in stockpicker %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}    
+        </select>
+        <br>
+        <div class="d-grid gap-2">
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+<button type = "submit" onclick="createOrder()"> Button</button>
+
+{% endblock %}
+{% block js %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+
+<script>
+
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+    {% comment %} code knee {% endcomment %}
+    {% comment %} function createOrder(){
+
+        axios.post('/api/order/' , {'id': 'hi'})
+        .then(response =>{
+            window.location.reload()
+        })
+     
+     } {% endcomment %}

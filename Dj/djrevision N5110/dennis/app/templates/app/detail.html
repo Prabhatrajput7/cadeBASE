@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+{% block tit %}Detail{% endblock  %}
+
+
+
+{% block bod %}
+{% if request.user == detail.user %}
+Post by:{{detail.user}} <br>
+Title: {{detail.title}} <br>
+Desc: {{detail.description}} <br>
+Completed: 
+ {% if detail.complete %}
+Completed
+ {% else %}
+Not completed
+ {% endif %}
+ {% else %}
+ <p>this is not your post</p>
+ {% endif %} 
+{% endblock  %}

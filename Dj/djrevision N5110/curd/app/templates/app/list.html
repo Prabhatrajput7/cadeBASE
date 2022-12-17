@@ -1,0 +1,20 @@
+{% load poll_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'app/include/inc.html' %}
+    <div>
+        {% for b in  bb%}
+        <div> 
+            <li>{{b.name|swapcase}} <a href="{% url 'update' b.id %}">edit</a> <a href=" {% url 'delete' b.id %} ">delete</a> <a href=" {% url 'display' b.id %} ">view</a></li>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

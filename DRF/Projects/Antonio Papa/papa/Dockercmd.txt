@@ -1,0 +1,40 @@
+docker-compose up -- building a file
+docker-compose exec name[backend] sh - to enter in docker and run cmd like python manage.py runserver 
+docker-compose exec redis sh
+
+FROM python:3.9
+ENV PYTHONUNBUFFERED 1
+WORKDIR /app
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+COPY . /app
+
+CMD python manage.py wait_for_db && python manage.py runserver 0.0.0.0:8000
+
+version: '3.9'
+services:
+  backend:
+    build: . - the command we need to build Docker is already in . path
+    volumes:
+      - .:/app - map the changes and viseversa
+    ports:
+      - 8000:8000  left what we set: right is default this will run on left side port
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: mysql:5.7.22
+    restart: always
+    environment:
+      MYSQL_DATABASE: ambassador
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379

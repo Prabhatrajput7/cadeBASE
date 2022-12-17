@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in bb %}
+    <li> <a href=" {{i.file.url}} " > View {{i.file}}</a>  <a href=" {{i.file.url}} " download = " {{i.file.url}} ">Download {{i.file}}</a> </li>
+    {% endfor %}
+</body>
+</html>

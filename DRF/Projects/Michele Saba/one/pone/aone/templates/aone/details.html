@@ -1,0 +1,17 @@
+{% extends 'aone/base.html' %}
+
+{% block title %} {{object.name}} {% endblock  %}
+
+
+{% block body %}
+
+<p>Product: {{ object.name }}</p>
+<p>Manufacturer: {{ object.manufacture.name }}</p>
+<p>Quantity: {{ object.quality }}</p>
+<p>Description: {{ object.desc }}</p>
+<p>Price: {{ object.price }}</p>
+<p>Shipping Cost: {{ object.ship_coast }} Dollars</p>
+
+<img src="{{ object.photo.url }}" alt="product photo">
+
+{% endblock  %}

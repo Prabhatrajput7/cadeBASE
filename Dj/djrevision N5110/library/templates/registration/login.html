@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% comment %} default url http://127.0.0.1:8000/accounts/login/ {% endcomment %}
+{% block bod %}
+
+{% if form.errors %}
+    <p>Your username or password was incorrect. Try again.</p>
+{% endif %}
+
+{% comment %} next means they are not authication for not have permission to access page {% endcomment %}
+{% if next %}
+{% comment %} if a user is authicated and have access to view the page {% endcomment %}
+    {% if user.is_authenticated %}
+        <p>You dont have permission for this page</p>
+
+    {% else %}
+        <p>Please login to see this page</p>
+    {% endif %}
+{% endif %}
+
+<form method='post' action="{% url 'login' %}">
+{% csrf_token %}
+{{form.username.label_tag}}
+{{form.username}}
+
+{{form.password.label_tag}}
+{{form.password}}
+<input type="submit" value='login'>
+<br>
+<br>
+<a href=" {% url 'Signup' %} ">Signup here</a> 
+<input type="hidden" name='next' value="{{next}}">
+
+{% comment %} after setting up form it will take you to account/profile u can customize that in settings {% endcomment %}
+</form> 
+
+{% endblock  %}

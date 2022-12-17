@@ -1,0 +1,143 @@
+In [1]: from papp.models import Profile,ProfileStatus
+
+In [2]: from django.contrib.auth.models import User
+
+In [3]: u = User.objects.get(id=2)
+
+In [4]: u = User.objects.filter(username__contains ='sh')
+
+In [5]: u
+Out[5]: <QuerySet [<User: Ash>]>
+
+In [6]: uu = u.username
+
+In [8]: u
+Out[8]: <QuerySet [<User: Ash>]>
+
+In [9]: u = User.objects.filter(username__contains ='sh')[0]
+
+In [10]: u
+Out[10]: <User: Ash>
+
+In [11]: u.username
+Out[11]: 'Ash'
+
+In [12]: uu = u.username
+
+In [13]: uu
+Out[13]: 'Ash'
+
+In [14]: pro = Profile.objects.get(city='russia')
+
+In [16]: pro = Profile.objects.filter(city='moscow')
+
+In [17]: pro
+Out[17]: <QuerySet []>
+
+In [18]: pro = Profile.objects.filter(city__contains='ss')
+
+In [19]: pro
+Out[19]: <QuerySet []>
+
+In [20]: pro = Profile.objects.all()
+
+In [21]: pro
+Out[21]: <QuerySet [<Profile: udemy>, <Profile: Ash>, <Profile: ela>, <Profile: resttest>, <Profile: kapkan>, <Profile: resttest2>, <Profile: pr7>]>
+
+In [22]: pro = Profile.objects.all()[1]
+
+In [23]: pro
+Out[23]: <Profile: Ash>
+
+In [24]: pro.profilestatus_set
+Out[24]: <django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager at 0x1155683eb30>
+
+In [28]: pro.profilestatus_set.all()
+Out[28]: <QuerySet [<ProfileStatus: Ash -- About to RUSH!!>]>
+
+In [29]: pro
+Out[29]: <Profile: Ash>
+
+In [30]: pss = ProfileStatus.objects.all()
+
+In [31]: 
+
+In [31]: pss
+Out[31]: <QuerySet [<ProfileStatus: Ash -- About to RUSH!!>, <ProfileStatus: udemy -- INCHARGE>, <ProfileStatus: ela -- sticking it>, <ProfileStatus: resttest -- testing>, <ProfileStatus: udemy -- checking model viewset permission>, <ProfileStatus: kapkan -- traps in>, <ProfileStatus: resttest2 -- >, <ProfileStatus: pr7 -- >]>      
+
+In [32]: pss = ProfileStatus.objects.filter(user_profile=1)
+
+In [33]: pss
+Out[33]: <QuerySet [<ProfileStatus: udemy -- INCHARGE>, <ProfileStatus: udemy -- checking model viewset permission>]>
+
+In [34]: pss = ProfileStatus.objects.filter(user_profile=pro)
+
+In [35]: pss
+Out[35]: <QuerySet [<ProfileStatus: Ash -- About to RUSH!!>]>
+
+In [36]: pss = ProfileStatus.objects.filter(user_profile=pro.username)
+
+In [44]: pss = ProfileStatus.objects.filter(user_profile__user=pro.user.username)
+
+In [45]: pss = ProfileStatus.objects.filter(user_profile__user=1)
+
+In [46]: pss
+Out[46]: <QuerySet [<ProfileStatus: udemy -- INCHARGE>, <ProfileStatus: udemy -- checking model viewset permission>]>
+
+In [47]: pss = ProfileStatus.objects.filter(user_profile__user__username=1)
+
+In [48]: pss
+Out[48]: <QuerySet []>
+
+In [49]: pss = ProfileStatus.objects.filter(user_profile__user__username='Ash')
+
+In [50]: pss
+Out[50]: <QuerySet [<ProfileStatus: Ash -- About to RUSH!!>]>
+
+In [51]: pss = ProfileStatus.objects.filter(user_profile__user__username=uu)
+
+In [52]: pss
+Out[52]: <QuerySet [<ProfileStatus: Ash -- About to RUSH!!>]>
+
+In [53]: uu
+Out[53]: 'Ash'
+
+In [54]: u
+Out[54]: <User: Ash>
+
+In [55]: pro
+Out[55]: <Profile: Ash>
+
+In [56]: pv = Profile.objects.get(id=2)
+
+In [57]: pv = Profile.objects.get(id=5)
+
+In [58]: pv
+Out[58]: <Profile: resttest>
+
+In [59]: pv.user
+Out[59]: <User: resttest>
+
+In [60]: ps = ProfileStatus.objects.get(id=5)
+
+In [61]: ps
+Out[61]: <ProfileStatus: Ash -- About to RUSH!!>
+
+In [62]: ps.user_profile
+Out[62]: <Profile: Ash>
+
+In [63]: ps.user_profile.user
+Out[63]: <User: Ash>
+
+In [64]: ps.user_profile.user.username
+Out[64]: 'Ash'
+
+In [65]: ps.user_profile.user.email
+Out[65]: ''
+
+In [66]: ps.user_profile.user.actived
+
+In [69]: ps.user_profile.user.is_active
+Out[69]: True
+
+In [70]: exit()

@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}Count{% endblock  %}
+
+{% block bod %}
+<div class="container">
+    <p>Genre Count {{ggenre}}</p>
+    <p>Lang Count {{lang}}</p>
+    <p>Book Count {{bk}}</p>
+    <p>BIns Count {{bi}}</p>
+    <p>Author Count {{ath}}</p>
+</div>    
+{% if user.is_authenticated %}
+{{request.path}}
+        <p> You are Logged In</p>
+        <p>Welcome: {{user.get_username}}</p>
+        <a href="{% url 'logout' %}?next={{request.path}}">LOGOUT HERE</a>
+        {% comment %} we use next so that where we can redirect user agter logout {% endcomment %}
+        {% comment %} ?next={{request.path}} this is acting like a home pg {% endcomment %}
+        {% comment %} if we remove ?next={{request.path}} user will redirect to logged_out.html {% endcomment %}
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}?next={{request.path}}">LOGIN HERE</a>
+    {% endif %}
+    {% endblock  %}

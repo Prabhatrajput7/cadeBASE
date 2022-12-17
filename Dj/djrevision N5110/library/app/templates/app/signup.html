@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load crispy_forms_tags %}
+<h1>Welocome Register Here</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    {{ form|crispy }}
+    <br>
+    <input type="submit" value="Signup">
+    <br>
+    Already a member
+    <br>
+    <a href=" {% url 'login' %} ">Login</a>
+</form>

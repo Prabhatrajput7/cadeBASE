@@ -1,0 +1,3 @@
+conda create --prefix ./env panda numpy[modules]
+conda activate C:\Users\Prabh\MLDS\env
+conda install jupiter notebook 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat APP</title>
+</head>
+<body>
+    
+    <textarea id="chathis" cols="100" rows="20">
+        {% for c in chats %}
+        {{c}} 
+        {% endfor %}
+
+    </textarea><br><br>
+    <input type="text" id="chatbox" size="100"><br><br>
+    <button type="button" id="sub">Send</button>
+    {{grpnm|json_script:"grpname"}}
+
+</body>
+
+<script>
+
+    const gname = JSON.parse(document.getElementById('grpname').textContent)
+    //let wc = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+    //let wc = new WebSocket('ws://127.0.0.1:8000/ws/ac/')
+
+    let wc = new WebSocket('ws://' +
+                            window.location.host +
+                            '/ws/ac/' +
+                            gname +
+                            '/')
+    //window.location.host = 127.0.0.1:8000
+    wc.onopen = () => {
+        console.log('DJ')
+        //wc.send('Hi DJ')
+    } 
+
+    wc.onmessage = (event) =>{
+        console.log('Message from DJ channels', event)
+        const ev = JSON.parse(event.data)
+        console.log(ev)
+        document.querySelector('#chathis').value += (ev.username + ":" + ev.mg + '\n')
+    }
+
+    wc.onerror =  () =>{
+        console.log('Error')
+    }
+
+    wc.onclose =  () =>{
+        console.log('Close')
+    }
+
+
+    document.getElementById('sub').onclick = () =>{
+        const meginputv = document.getElementById('chatbox')
+        const mess = meginputv.value
+        wc.send(JSON.stringify({
+            'mg':mess
+        }))
+
+        meginputv.value = ''
+    }
+
+    
+
+</script>
+
+</html>

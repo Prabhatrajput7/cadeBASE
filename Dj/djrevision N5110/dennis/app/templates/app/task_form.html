@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}Create{% endblock  %}
+
+{% block bod %}
+
+<a href=" {% url 'list' %} "> Go back</a>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type"submit">Submit</button>
+</form>
+
+{% endblock  %}

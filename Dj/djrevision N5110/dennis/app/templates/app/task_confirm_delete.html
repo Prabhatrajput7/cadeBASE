@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}
+Delete
+{% endblock  %}
+
+{% block bod %}
+<a href=" {% url 'list' %} ">Go Back</a>
+<form method ="POST">
+    {% csrf_token %}
+    <p>Are you sure you wan to delete {{task}}</p>
+    <button type="submit">Delete</button>
+</form>
+{% endblock  %}

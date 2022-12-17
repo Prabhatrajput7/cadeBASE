@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Welcome to Web Socket
+    Check Console Log 
+
+    <h1>COUNTER</h1>
+    <h2 id="hh2"></h2>
+
+
+
+</body>
+
+<script>
+
+
+    let wc = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+
+    wc.onopen = function(){
+        console.log('On Open WebSocket')
+        wc.send('Hi DJ')
+    } 
+
+    {% comment %} wc.onopen = () => {
+        console.log('On Open WebSocket')
+        wc.send('Hi DJ')
+    } {% endcomment %}
+
+    wc.onmessage = function(event){
+        console.log('Message from DJ channels', event)
+        let ev = JSON.parse(event.data)
+        document.getElementById('hh2').innerHTML = ev.count
+    }
+
+    wc.onerror = function(){
+        console.log('Error')
+    }
+
+    wc.onclose = function(){
+        console.log('Close')
+    }
+
+</script>
+</html>

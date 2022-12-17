@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% block tit %}
+All
+{% endblock  %}
+{% block bod %}
+<a href=" {% url 'logout' %} "> logout</a>
+{% if  super%}
+<form method="GET">
+    <input type='text' name='search-area' value={{search_input}}>
+    <input class="button" type="submit" value='Search'>
+</form>
+
+{% for t in tt %}
+<li>{{t}} by {{t.user}}</li>
+{% endfor %}
+{% else %}
+<p>Not Allowed you are not a super user</p>
+{% endif %}
+
+
+{% endblock  %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="hh2" ></h2>
+</body>
+
+
+<script>
+
+
+    let wc = new WebSocket('ws://127.0.0.1:8000/ws/ac/')
+
+    wc.onopen = function(){
+        console.log('On Open WebSocket')
+        wc.send('Hi DJ')
+    } 
+
+    wc.onmessage = function(event){
+        document.getElementById('hh2').innerHTML = event.data
+    }
+
+    wc.onerror = function(){
+        console.log('Error')
+    }
+
+    wc.onclose = function(){
+        console.log('Close')
+    }
+
+</script>
+
+</html>

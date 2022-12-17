@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}List{% endblock  %}
+{% block bod %}
+
+{% if  request.user.is_authenticated%}
+<a href=" {% url 'logout' %} ">Logout</a>
+{% else %}
+<a href=" {% url 'login' %} ">Login</a>
+{% endif %}
+
+<a href=" {% url 'all' %} ">All</a>
+  
+<a href=" {% url 'create' %} ">Add a new one</a>
+
+<form method="GET">
+    <input type='text' name='search-area' value={{search_input}}>
+    <input class="button" type="submit" value='Search'>
+</form>
+{% comment %} {% if messages %}
+{% for m in messages %}
+{{m}}
+{% endfor %}
+{% endif %} {% endcomment %}
+
+<table>
+    <tr>
+      <th>Items </th>
+    </tr>
+    {% for t in tt %}
+    <tr> 
+        <td>{{t}} by {{t.user}}</td>
+        <td><a href=" {% url 'detail' t.id %} ">View</a></td>
+        <td><a href=" {% url 'up' t.id %} ">edit</a></td>
+        <td><a href=" {% url 'del' t.id %} ">delete</a></td>
+
+        {% empty %}
+        <p>No Task</p>
+        <a href=" {% url 'create' %} ">Create one</a>
+        {% endfor %}
+    </tr>
+  </table>
+
+{% endblock  %}

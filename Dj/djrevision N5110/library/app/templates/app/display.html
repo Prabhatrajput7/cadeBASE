@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}
+Detail Book
+{% endblock  %}
+{% block bod %}
+
+<div class = "container">
+    {{bdetail.title}} <br>
+    {{bdetail.author}} <br>
+    {{bdetail.summary}} <br>
+    {{bdetail.isbn}} <br>
+    {{bdetail.language}} <br>
+    {{g}}:<br>
+    {% for t in genres%}
+    {{t}}<br>
+    {% endfor %}
+    {% if  favkey%} 
+        <h2>this is fav</h2>
+        <form  method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="delfav" value={{bdetail.id}}>
+            <button>del fav</button>
+        </form>
+     {% else %}
+    <form  method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="favbook" value={{bdetail.id}}>
+        <button>Fav</button>
+    </form>
+    
+    {% endif %}
+</div>
+
+
+{% endblock  %}

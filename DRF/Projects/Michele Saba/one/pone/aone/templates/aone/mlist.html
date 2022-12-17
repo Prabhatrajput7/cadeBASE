@@ -1,0 +1,13 @@
+{% extends 'aone/base.html' %}
+
+{% block title %}Manufacture List{% endblock  %}
+
+{% block body %}
+
+{% for object in object_list %}
+<p>Name: {{ object.name }}</p>
+<p>Location: {{ object.loc }}</p>
+<p>Active: {{ object.active }}</p>
+{% endfor %}
+
+{% endblock  %}

@@ -1,0 +1,71 @@
+2021-10-16 19:50:12,410 :INFO :test_userpro :b
+2021-10-16 19:50:12,420 :INFO :test_userpro :y
+2021-10-16 19:50:12,420 :INFO :test_userpro :y
+2021-10-16 19:50:12,428 :INFO :test_userpro :b
+2021-10-16 19:50:12,428 :INFO :test_userpro :b
+2021-10-16 19:50:12,428 :INFO :test_userpro :b
+2021-10-16 19:50:34,587 :INFO :test_userpro :abc
+2021-10-16 19:50:34,596 :INFO :test_userpro :xyz
+2021-10-16 19:50:34,596 :INFO :test_userpro :xyz
+2021-10-16 19:50:34,604 :INFO :test_userpro :abcxyz.com
+2021-10-16 19:50:34,604 :INFO :test_userpro :abcxyz.com
+2021-10-16 19:50:34,604 :INFO :test_userpro :abcxyz.com
+2021-10-22 08:40:06,186 :INFO :test_userpro :xyz
+2022-01-31 17:01:07,744 :INFO :test_userpro :xyz
+2022-01-31 17:02:36,338 :INFO :test_userpro :h
+2022-01-31 17:02:36,352 :INFO :test_userpro :i
+2022-01-31 17:02:36,352 :INFO :test_userpro :i
+2022-01-31 17:03:51,417 :INFO :test_userpro :chrome
+2022-01-31 17:03:51,426 :INFO :test_userpro :Firefox
+2022-01-31 17:03:51,426 :INFO :test_userpro :Firefox
+2022-01-31 17:05:23,204 :INFO :test_userpro :['abc', 'xyz', 'abcxyz.com']
+2022-01-31 17:06:02,255 :INFO :test_userpro :chrome
+2022-01-31 17:06:02,264 :INFO :test_userpro :Firefox
+2022-01-31 17:06:02,264 :INFO :test_userpro :Firefox
+2022-06-17 11:51:18,658 :INFO :test_userpro :['abc', 'xyz', 'abcxyz.com']
+2022-06-17 11:51:42,085 :INFO :test_userpro :abc
+2022-06-17 11:52:07,091 :INFO :test_userpro :abc
+2022-06-17 11:53:27,044 :INFO :test_userpro :chrome
+2022-06-17 11:53:27,053 :INFO :test_userpro :Firefox
+2022-06-17 11:53:27,053 :INFO :test_userpro :Firefox
+2022-06-17 11:54:18,881 :INFO :test_userpro :chrome
+2022-06-17 11:55:24,332 :INFO :test_userpro :chrome
+2022-06-17 11:55:24,340 :INFO :test_userpro :Firefox
+2022-06-17 11:55:24,340 :INFO :test_userpro :Firefox
+2022-06-17 11:56:09,803 :INFO :test_userpro :('chrome', 'Firefox')
+2022-06-17 11:56:09,811 :INFO :test_userpro :IE11
+2022-06-17 11:56:09,811 :INFO :test_userpro :IE11
+2022-06-17 11:56:25,473 :INFO :test_userpro :chrome
+2022-06-17 11:56:25,480 :INFO :test_userpro :I
+2022-06-17 11:56:25,480 :INFO :test_userpro :I
+2022-06-17 12:11:57,104 :INFO :test_userpro :{'name': 7, 'age': 24}
+2022-06-17 12:34:17,111 :INFO :pTest.BassClass :{'name': 7, 'age': 24}
+2022-06-17 12:34:17,111 :INFO :pTest.BassClass :{'name': 7, 'age': 24}
+2022-06-17 12:35:27,747 :INFO :test_getlogger :{'name': 7, 'age': 24}
+2022-06-17 12:35:27,747 :INFO :test_getlogger :{'name': 7, 'age': 24}
+2022-06-17 12:36:11,007 :INFO :test_getlogger :{'name': 7}
+2022-06-17 12:36:43,300 :INFO :test_getlogger :chrome
+2022-06-17 12:36:43,313 :INFO :test_getlogger :Firefox
+2022-06-17 12:36:43,313 :INFO :test_getlogger :Firefox
+2022-06-17 12:37:18,991 :INFO :test_getlogger :chrome
+2022-06-17 12:37:19,003 :INFO :test_getlogger :Firefox
+2022-06-17 12:37:19,003 :INFO :test_getlogger :Firefox
+2022-06-17 12:37:34,397 :INFO :test_getlogger :chrome
+2022-06-17 12:37:34,405 :INFO :test_getlogger :Firefox
+2022-06-17 12:37:34,405 :INFO :test_getlogger :Firefox
+2022-06-17 12:38:15,522 :INFO :test_getlogger :chrome
+2022-06-17 12:38:15,529 :INFO :test_getlogger :Firefox
+2022-06-17 12:38:15,529 :INFO :test_getlogger :Firefox
+2022-06-17 12:38:15,537 :INFO :test_getlogger :edge
+2022-06-17 12:38:15,537 :INFO :test_getlogger :edge
+2022-06-17 12:38:15,537 :INFO :test_getlogger :edge
+2022-06-17 12:45:14,891 :INFO :test_getlogger :chrome
+2022-06-17 12:45:14,898 :INFO :test_getlogger :Firefox
+2022-06-17 12:45:14,906 :INFO :test_getlogger :edge
+2022-07-18 10:21:52,453 :INFO :test_getlogger :chrome
+2022-07-18 10:21:52,473 :INFO :test_getlogger :Firefox
+2022-07-18 10:21:52,481 :INFO :test_getlogger :edge
+2022-07-18 10:22:30,582 :INFO :test_getlogger :{'name': 7}
+2022-07-18 10:24:39,689 :INFO :test_getlogger :chrome
+2022-07-18 10:24:39,697 :INFO :test_getlogger :Firefox
+2022-07-18 10:24:39,704 :INFO :test_getlogger :edge

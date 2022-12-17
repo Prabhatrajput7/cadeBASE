@@ -1,0 +1,17 @@
+{% extends 'aone/base.html' %}
+
+{% block title %} {{object.name}} {% endblock  %}
+
+
+{% block body %}
+
+<p>Name: {{ object.name }}</p>
+<p>Location: {{ object.loc }}</p>
+<p>Active: {{ object.active }}</p>
+
+<p>Products BY US</p>
+{% for p in object.products.all %}
+<p>{{ p.name }}</p>
+{% endfor %}
+
+{% endblock  %}

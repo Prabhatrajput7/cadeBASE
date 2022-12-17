@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block tit %}
+All Book
+{% endblock  %}
+{% block bod %}
+
+{% for b in  bbk%}
+ <li> <a href="{{b.get_absolute_url}}">{{forloop.counter}} {{b}}</a> </li>
+{% endfor %}
+
+{% endblock  %}

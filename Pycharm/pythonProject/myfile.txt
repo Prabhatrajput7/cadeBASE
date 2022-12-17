@@ -1,0 +1,2 @@
+There are various methods available with the file object. Some of them have been used in the above examples.
+Here is the complete list of methods in text mode with a brief description:

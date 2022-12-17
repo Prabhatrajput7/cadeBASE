@@ -1,0 +1,8 @@
+2021-08-12 00:11:46,999 :INFO : pTest.test_logging :Information statement
+2021-08-12 00:11:47,000 :WARNING : pTest.test_logging :Something is in warning mode
+2021-08-12 00:11:47,000 :ERROR : pTest.test_logging :A Major error has happend
+2021-08-12 00:11:47,000 :CRITICAL : pTest.test_logging :Critical issue
+2021-08-12 00:12:36,323 :INFO : pTest.test_logging :Information statement
+2021-08-12 00:12:36,323 :WARNING : pTest.test_logging :Something is in warning mode
+2021-08-12 00:12:36,324 :ERROR : pTest.test_logging :A fuck
+2021-08-12 00:12:36,324 :CRITICAL : pTest.test_logging :Critical issue
